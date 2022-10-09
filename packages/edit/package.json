@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.10",
+    "@rhizo/seed": "^1.0.2",
     "color": "^3.1.0",
     "lodash.get": "^4.4.2",
     "lodash.merge": "^4.6.1",
@@ -17,5 +18,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ab21a63e1496cdd4d34d71ba87bf0706d8a80d12"
+  "gitHead": "0b556528d813606ade28d582fc9d13465949a6f2"
 }

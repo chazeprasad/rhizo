@@ -5,7 +5,7 @@
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan <chazeprasad@gmail.com>",
   "license": "MIT",
-  "gitHead": "ab21a63e1496cdd4d34d71ba87bf0706d8a80d12",
+  "gitHead": "0b556528d813606ade28d582fc9d13465949a6f2",
   "dependencies": {
     "@rhizo/core": "^1.0.2"
   },

@@ -20,6 +20,15 @@ exports[`emotion object breakpoints work with defaultProps 1`] = `
 
 <div
   className="emotion-0"
+  seed={
+    Object {
+      "breakpoints": Object {
+        "medium": "40em",
+        "small": "32em",
+      },
+      "disableStyledSystemCache": true,
+    }
+  }
 />
 `;
 
