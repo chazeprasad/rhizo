@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, SeedContext } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import React, { useReducer, useContext } from 'react'
 import merge from 'lodash.merge'
 import omit from 'lodash.omit'
 import get from 'lodash.get'
 import set from 'lodash.set'
 import Color from 'color'
+import { SeedContext } from '@rhizo/seed'
 
 export const EditContext = React.createContext({})
 
@@ -37,7 +38,7 @@ export const EditProvider = ({
 }
 
 // context-aware field
-const Input = props => (
+const Input = (props) => (
   <input
     {...props}
     css={{
@@ -55,19 +56,19 @@ const Select = ({ options = [], ...props }) => (
       margin: 0,
     }}
   >
-    {options.map(option => (
+    {options.map((option) => (
       <option key={option}>{option}</option>
     ))}
   </select>
 )
 
-const ColorInput = props => (
+const ColorInput = (props) => (
   <>
     <input
       type="color"
       {...props}
       value={toHex(props.value)}
-      onChange={e => {
+      onChange={(e) => {
         const next = merge({}, e, {
           target: {
             value: toHex(e.target.value),
@@ -93,7 +94,7 @@ const ColorInput = props => (
 export const Field = ({ name, type, options, render, ...props }) => {
   const context = useContext(EditContext)
   const value = get(context.state, name)
-  const onChange = e => {
+  const onChange = (e) => {
     context.setState(set({}, name, e.target.value))
   }
 
@@ -155,7 +156,7 @@ export const Field = ({ name, type, options, render, ...props }) => {
   )
 }
 
-const toHex = n => {
+const toHex = (n) => {
   try {
     return Color(n).hex()
   } catch (e) {
@@ -177,7 +178,7 @@ export const FieldSet = ({ name, type, ignore = [], ...props }) => {
       >
         {name}
       </h3>
-      {Object.keys(omit(value, ignore)).map(key => {
+      {Object.keys(omit(value, ignore)).map((key) => {
         const val = value[key]
         if (val && typeof val === 'object') {
           return (
@@ -226,14 +227,14 @@ export const SeedControls = ({ ignore, ...props }) => {
         WebkitOverflowScrolling: 'touch',
       }}
     >
-      {keys.map(key => (
+      {keys.map((key) => (
         <FieldSet key={key} {...context} name={key} type={getType(key)} />
       ))}
     </div>
   )
 }
 
-export const ResetButton = props => {
+export const ResetButton = (props) => {
   const { reset } = useContext(EditContext)
   return <button {...props} onClick={reset} />
 }
