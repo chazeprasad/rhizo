@@ -1,6 +1,6 @@
 {
   "name": "@rhizo/prop-types",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan",
@@ -9,7 +9,7 @@
     "@rhizo/system": "^1.0.0"
   },
   "devDependencies": {
-    "@rhizo/system": "^1.0.6"
+    "@rhizo/system": "^1.0.7"
   },
   "dependencies": {
     "prop-types": "^15.7.2"

@@ -1,6 +1,6 @@
 {
   "name": "@rhizo/system",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Responsive, seed-based style props for building design systems with React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,18 +13,18 @@
   "author": "Prasad Sivanandan",
   "license": "MIT",
   "dependencies": {
-    "@rhizo/background": "^1.0.6",
-    "@rhizo/border": "^1.0.6",
-    "@rhizo/color": "^1.0.6",
-    "@rhizo/core": "^1.0.6",
-    "@rhizo/flexbox": "^1.0.6",
-    "@rhizo/grid": "^1.0.6",
-    "@rhizo/layout": "^1.0.6",
-    "@rhizo/position": "^1.0.6",
-    "@rhizo/shadow": "^1.0.6",
-    "@rhizo/space": "^1.0.6",
-    "@rhizo/typography": "^1.0.6",
-    "@rhizo/variant": "^1.0.6"
+    "@rhizo/background": "^1.0.7",
+    "@rhizo/border": "^1.0.7",
+    "@rhizo/color": "^1.0.7",
+    "@rhizo/core": "^1.0.7",
+    "@rhizo/flexbox": "^1.0.7",
+    "@rhizo/grid": "^1.0.7",
+    "@rhizo/layout": "^1.0.7",
+    "@rhizo/position": "^1.0.7",
+    "@rhizo/shadow": "^1.0.7",
+    "@rhizo/space": "^1.0.7",
+    "@rhizo/typography": "^1.0.7",
+    "@rhizo/variant": "^1.0.7"
   },
   "gitHead": "798ce8d3d2cbbd0f47e191abf5708528eb01bf3b",
   "devDependencies": {
