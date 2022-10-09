@@ -1,6 +1,6 @@
 {
   "name": "@rhizo/css",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Rhizo for the `css` prop",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
