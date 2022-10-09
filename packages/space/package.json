@@ -1,13 +1,13 @@
 {
   "name": "@rhizo/space",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan <chazeprasad@gmail.com>",
   "license": "MIT",
   "gitHead": "0a22c98bda76bc0d63b9621e8d61e55b1d96c016",
   "dependencies": {
-    "@rhizo/core": "^1.0.9"
+    "@rhizo/core": "^1.0.10"
   },
   "publishConfig": {
     "access": "public"
