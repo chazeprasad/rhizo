@@ -15,7 +15,7 @@ import {
   buttonStyle,
   textStyle,
   colorStyle
-} from 'rhizo'
+} from '@rhizo/system'
 
 const all = compose(
   space,

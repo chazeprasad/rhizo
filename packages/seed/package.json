@@ -5,7 +5,7 @@
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan <chazeprasad@gmail.com>",
   "license": "MIT",
-  "gitHead": "94c23a1f908153494e7f3e9b3d1f8d01753b3ec9",
+  "gitHead": "33a926776e89a37dcd1950b0fe86cdae1d1f2508",
   "dependencies": {
     "object-assign": "^4.1.1",
     "react": "^16.8.5"

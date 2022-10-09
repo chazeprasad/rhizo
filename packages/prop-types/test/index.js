@@ -13,7 +13,7 @@ import {
   buttonStyle,
   textStyle,
   colorStyle
-} from 'rhizo'
+} from '@rhizo/system'
 
 test('includes prop types for all space prop names', () => {
   const types = Object.keys(propTypes.space)

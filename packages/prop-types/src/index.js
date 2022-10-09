@@ -13,7 +13,7 @@ import {
   buttonStyle,
   textStyle,
   colorStyle
-} from 'rhizo'
+} from '@rhizo/system'
 
 export const propType = PropTypes.oneOfType([
   PropTypes.number,

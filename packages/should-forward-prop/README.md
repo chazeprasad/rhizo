@@ -13,7 +13,7 @@ import {
   space,
   color,
   typography
-} from 'rhizo'
+} from '@rhizo/system'
 import shouldForwardProp from '@rhizo/should-forward-prop'
 
 const Box = styled('div', { shouldForwardProp })(
@@ -29,7 +29,7 @@ To exclude other custom props not included in Rhizo, use the `createShouldForwar
 
 ```js
 import styled from '@emotion/styled'
-import { space, color } from 'rhizo'
+import { space, color } from '@rhizo/system'
 import { createShouldForwardProp, props } from '@rhizo/should-forward-prop'
 
 const shouldForwardProp = createShouldForwardProp([

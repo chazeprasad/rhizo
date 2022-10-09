@@ -9,7 +9,7 @@ npm i rhizo @rhizo/prop-types
 
 ```js
 import styled from 'styled-components'
-import { space, color } from 'rhizo'
+import { space, color } from '@rhizo/system'
 import propTypes from '@rhizo/prop-types'
 
 const Box = styled('div')(space, color)
@@ -37,7 +37,7 @@ Box.propTypes = {
 
 ```js
 import styled from 'styled-components'
-import { space, system } from 'rhizo'
+import { space, system } from '@rhizo/system'
 import propTypes, { propType } from '@rhizo/prop-types'
 
 const gridGap = system({
