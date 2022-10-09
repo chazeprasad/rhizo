@@ -1,0 +1,35 @@
+{
+  "name": "rhizo",
+  "version": "1.0.0",
+  "description": "Responsive, theme-based style props for building design systems with React",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "keywords": [
+    "react",
+    "css-in-js",
+    "styled-components",
+    "emotion"
+  ],
+  "author": "Prasad Sivanandan",
+  "license": "MIT",
+  "dependencies": {
+    "@rhizo/background": "^1.0.0",
+    "@rhizo/border": "^1.0.0",
+    "@rhizo/color": "^1.0.0",
+    "@rhizo/core": "^1.0.0",
+    "@rhizo/flexbox": "^1.0.0",
+    "@rhizo/grid": "^1.0.0",
+    "@rhizo/layout": "^1.0.0",
+    "@rhizo/position": "^1.0.0",
+    "@rhizo/shadow": "^1.0.0",
+    "@rhizo/space": "^1.0.0",
+    "@rhizo/typography": "^1.0.0",
+    "@rhizo/variant": "^1.0.0"
+  },
+  "gitHead": "a6feb6009c58f2eb68f0c3120c5672f6cb54294f",
+  "devDependencies": {
+    "@emotion/styled": "^10.0.14",
+    "jest-styled-components": "^7.0.0",
+    "styled-components": "^5.0.0"
+  }
+}

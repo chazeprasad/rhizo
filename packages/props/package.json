@@ -1,0 +1,14 @@
+{
+  "name": "@rhizo/props",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "author": "Prasad Sivanandan",
+  "license": "MIT",
+  "dependencies": {
+    "rhizo": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
