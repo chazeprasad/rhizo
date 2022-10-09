@@ -1,12 +1,12 @@
 {
   "name": "@rhizo/background",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan",
   "license": "MIT",
   "dependencies": {
-    "@rhizo/core": "^1.0.3"
+    "@rhizo/core": "^1.0.4"
   },
   "publishConfig": {
     "access": "public"
