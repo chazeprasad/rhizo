@@ -32,7 +32,6 @@ export { default as boxShadow, default as textShadow } from '@rhizo/shadow'
 // ----------------------------------------------------------------------
 
 export { SeedContext, SeedProvider } from '@rhizo/seed'
-export { default as propTypes } from '@rhizo/prop-types'
 
 // ----------------------------------------------------------------------
 
