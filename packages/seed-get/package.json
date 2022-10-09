@@ -1,12 +1,12 @@
 {
   "name": "@rhizo/seed-get",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan <chazeprasad@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@rhizo/core": "^1.0.5"
+    "@rhizo/core": "^1.0.6"
   },
   "gitHead": "33a926776e89a37dcd1950b0fe86cdae1d1f2508",
   "publishConfig": {
