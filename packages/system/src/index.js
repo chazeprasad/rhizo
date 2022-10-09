@@ -29,12 +29,14 @@ export { grid } from '@rhizo/grid'
 export { shadow } from '@rhizo/shadow'
 export { default as boxShadow, default as textShadow } from '@rhizo/shadow'
 
-export {
-  variant,
-  buttonStyle,
-  textStyle,
-  colorStyle
-} from '@rhizo/variant'
+// ----------------------------------------------------------------------
+
+export { SeedContext, SeedProvider } from '@rhizo/seed'
+export { default as propTypes } from '@rhizo/prop-types'
+
+// ----------------------------------------------------------------------
+
+export { variant, buttonStyle, textStyle, colorStyle } from '@rhizo/variant'
 
 const {
   width,
@@ -48,7 +50,7 @@ const {
   display,
   overflow,
   overflowX,
-  overflowY
+  overflowY,
 } = layout
 const { opacity } = color
 const {
@@ -106,13 +108,7 @@ const {
   backgroundPosition,
   backgroundRepeat,
 } = background
-const {
-  zIndex,
-  top,
-  right,
-  bottom,
-  left,
-} = position
+const { zIndex, top, right, bottom, left } = position
 
 export { default as borders } from '@rhizo/border'
 export {
