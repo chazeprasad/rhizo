@@ -11,7 +11,7 @@ export const variant = ({
 }) => {
   let sx
   if (Object.keys(variants).length) {
-    sx = (value, scale, props) => css(get(scale, value, null))(props.theme)
+    sx = (value, scale, props) => css(get(scale, value, null))(props.seed)
   } else {
     sx = (value, scale) => get(scale, value, null)
   }

@@ -13,7 +13,7 @@ test('returns position styles', () => {
   })
 })
 
-test('returns theme values', () => {
+test('returns seed values', () => {
   const style = position({ top: 1, right: 2, bottom: 3, left: 4 })
   expect(style).toEqual({ top: 4, right: 8, bottom: 16, left: 32 })
 })

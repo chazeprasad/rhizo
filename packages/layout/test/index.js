@@ -19,9 +19,9 @@ test('returns layout styles', () => {
   })
 })
 
-test('returns 0 from theme.sizes', () => {
+test('returns 0 from seed.sizes', () => {
   const style = layout({
-    theme: {
+    seed: {
       sizes: [ 24, 48, 96 ],
     },
     width: 0,

@@ -1,7 +1,7 @@
 
 # @rhizo/should-forward-prop
 
-Utility for filtering Styled System props with Emotion's shouldForwardProp option
+Utility for filtering Rhizo props with Emotion's shouldForwardProp option
 
 ```sh
 npm i @rhizo/should-forward-prop
@@ -25,7 +25,7 @@ const Box = styled('div', { shouldForwardProp })(
 
 ## Custom Props
 
-To exclude other custom props not included in Styled System, use the `createShouldForwardProp` utility.
+To exclude other custom props not included in Rhizo, use the `createShouldForwardProp` utility.
 
 ```js
 import styled from '@emotion/styled'

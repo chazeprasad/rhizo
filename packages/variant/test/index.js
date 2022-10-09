@@ -5,7 +5,7 @@ import {
 } from '../src'
 import { system, compose } from '@rhizo/core'
 
-const theme = {
+const seed = {
   colors: {
     blue: '#07c',
     black: '#111',
@@ -15,10 +15,10 @@ const theme = {
 const fontSize = system({ fontSize: true })
 const color = system({ color: true })
 
-test('variant returns style objects from theme', () => {
+test('variant returns style objects from seed', () => {
   const buttons = variant({ key: 'buttons' })
   const a = buttons({
-    theme: {
+    seed: {
       buttons: {
         primary: {
           padding: '32px',
@@ -37,7 +37,7 @@ test('variant returns style objects from theme', () => {
 test('variant prop can be customized', () => {
   const buttons = variant({ key: 'buttons', prop: 'type' })
   const a = buttons({
-    theme: {
+    seed: {
       buttons: {
         primary: {
           padding: '32px',
@@ -60,7 +60,7 @@ test('variant can be composed', () => {
     color
   )
   const result = system({
-    theme: {
+    seed: {
       typography: {
         primary: {
           fontSize: '32px',
@@ -77,9 +77,9 @@ test('variant can be composed', () => {
   })
 })
 
-test('textStyle prop returns theme.textStyles object', () => {
+test('textStyle prop returns seed.textStyles object', () => {
   const a = textStyle({
-    theme: {
+    seed: {
       textStyles: {
         heading: {
           fontWeight: 'bold',
@@ -95,9 +95,9 @@ test('textStyle prop returns theme.textStyles object', () => {
   })
 })
 
-test('colors prop returns theme.colorStyles object', () => {
+test('colors prop returns seed.colorStyles object', () => {
   const a = colorStyle({
-    theme: {
+    seed: {
       colorStyles: {
         dark: {
           color: '#fff',
@@ -139,7 +139,7 @@ describe('component variant', () => {
     })
   })
 
-  test('returns theme-aware styles', () => {
+  test('returns seed-aware styles', () => {
     const comp = variant({
       variants: {
         primary: {
@@ -152,7 +152,7 @@ describe('component variant', () => {
     })
     const style = comp({
       variant: 'primary',
-      theme: {
+      seed: {
         colors: {
           primary: '#07c',
         }
@@ -242,7 +242,7 @@ describe('component variant', () => {
     })
   })
 
-  test('theme-based variants override local variants', () => {
+  test('seed-based variants override local variants', () => {
     const comp = variant({
       variants: {
         primary: {
@@ -254,7 +254,7 @@ describe('component variant', () => {
     })
     const style = comp({
       variant: 'primary',
-      theme: {
+      seed: {
         buttons: {
           primary: {
             color: 'black',

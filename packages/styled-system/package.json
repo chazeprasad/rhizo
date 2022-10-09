@@ -1,7 +1,7 @@
 {
   "name": "rhizo",
   "version": "1.0.1",
-  "description": "Responsive, theme-based style props for building design systems with React",
+  "description": "Responsive, seed-based style props for building design systems with React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "keywords": [
@@ -26,7 +26,7 @@
     "@rhizo/typography": "^1.0.1",
     "@rhizo/variant": "^1.0.1"
   },
-  "gitHead": "a6feb6009c58f2eb68f0c3120c5672f6cb54294f",
+  "gitHead": "ab21a63e1496cdd4d34d71ba87bf0706d8a80d12",
   "devDependencies": {
     "@emotion/styled": "^10.0.14",
     "jest-styled-components": "^7.0.0",

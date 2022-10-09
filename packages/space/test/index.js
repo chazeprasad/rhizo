@@ -22,9 +22,9 @@ test('returns negative em values', () => {
   expect(styles).toEqual({ margin: '-16em' })
 })
 
-test('returns negative theme values', () => {
+test('returns negative seed values', () => {
   const styles = space({
-    theme: {
+    seed: {
       space: [0, 4, 8],
     },
     m: -2,
@@ -32,9 +32,9 @@ test('returns negative theme values', () => {
   expect(styles).toEqual({ margin: -8 })
 })
 
-test('returns positive theme values', () => {
+test('returns positive seed values', () => {
   const styles = space({
-    theme: {
+    seed: {
       space: [0, '1em', '2em'],
     },
     m: 2,
@@ -60,9 +60,9 @@ test('returns aliased values', () => {
   expect(styles).toEqual({ paddingLeft: 8, paddingRight: 8 })
 })
 
-test('returns string values from theme', () => {
+test('returns string values from seed', () => {
   const styles = space({
-    theme: {
+    seed: {
       space: [0, '1em'],
     },
     padding: 1,
@@ -70,9 +70,9 @@ test('returns string values from theme', () => {
   expect(styles).toEqual({ padding: '1em' })
 })
 
-test('returns negative string values from theme', () => {
+test('returns negative string values from seed', () => {
   const styles = space({
-    theme: {
+    seed: {
       space: [0, '1em'],
     },
     margin: -1,
@@ -80,9 +80,9 @@ test('returns negative string values from theme', () => {
   expect(styles).toEqual({ margin: '-1em' })
 })
 
-test('returns values from theme object', () => {
+test('returns values from seed object', () => {
   const styles = space({
-    theme: {
+    seed: {
       space: { sm: 1 },
     },
     margin: 'sm',
@@ -140,7 +140,7 @@ test('margin overrides m prop', () => {
   expect(styles).toEqual({ margin: 8 })
 })
 
-test('handles margin with no theme', () => {
+test('handles margin with no seed', () => {
   const styles = space({
     mt: 12,
   })
@@ -205,7 +205,7 @@ test('supports object values', () => {
 })
 
 test('supports non-array breakpoints', () => {
-  const theme = {
+  const seed = {
     disableStyledSystemCache: true,
     breakpoints: {
       small: '40em',
@@ -213,7 +213,7 @@ test('supports non-array breakpoints', () => {
     }
   }
   const styles = space({
-    theme,
+    seed,
     p: {
       small: 2,
     },

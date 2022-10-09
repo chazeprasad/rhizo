@@ -1,7 +1,7 @@
 
 # @rhizo/edit
 
-**WIP** Debugging tool for live editing Styled System theme objects
+**WIP** Debugging tool for live editing Rhizo seed objects
 
 *Currently only works with Emotion*
 
@@ -11,65 +11,65 @@ npm i @rhizo/edit
 
 ```jsx
 import React from 'react'
-import { ThemeProvider } from 'emotion-theming'
-import { EditProvider, ThemeControls } from '@rhizo/edit'
-import theme from './theme'
+import { SeedProvider } from 'emotion-theming'
+import { EditProvider, SeedControls } from '@rhizo/edit'
+import seed from './seed'
 
 export default props =>
-  <ThemeProvider theme={theme}>
+  <SeedProvider seed={seed}>
     <EditProvider>
       {props.children}
-      <ThemeControls />
+      <SeedControls />
     </EditProvider>
-  </ThemeProvider>
+  </SeedProvider>
 ```
 
 ## Components
 
-- `EditProvider` a stateful theme provider with context for live editing – receives `theme` from parent context
-- `ThemeControls` a full, batteries-included theme editing form
-- `FieldSet` renders fields for part of a `theme` object
-- `Field` renders a form field for a single value from the `theme` object
+- `EditProvider` a stateful seed provider with context for live editing – receives `seed` from parent context
+- `SeedControls` a full, batteries-included seed editing form
+- `FieldSet` renders fields for part of a `seed` object
+- `Field` renders a form field for a single value from the `seed` object
 
 ```jsx
 // example using FieldSet
 import React from 'react'
-import { ThemeProvider } from 'emotion-theming'
-import { EditProvider, ThemeControls } from '@rhizo/edit'
-import theme from './theme'
+import { SeedProvider } from 'emotion-theming'
+import { EditProvider, SeedControls } from '@rhizo/edit'
+import seed from './seed'
 
 export default props =>
-  <ThemeProvider theme={theme}>
+  <SeedProvider seed={seed}>
     <EditProvider>
       {props.children}
       <FieldSet name='colors' />
       <FieldSet name='fontSizes' />
     </EditProvider>
-  </ThemeProvider>
+  </SeedProvider>
 ```
 
 ```jsx
 // example using Field
 import React from 'react'
-import { ThemeProvider } from 'emotion-theming'
-import { EditProvider, ThemeControls } from '@rhizo/edit'
-import theme from './theme'
+import { SeedProvider } from 'emotion-theming'
+import { EditProvider, SeedControls } from '@rhizo/edit'
+import seed from './seed'
 
 export default props =>
-  <ThemeProvider theme={theme}>
+  <SeedProvider seed={seed}>
     <EditProvider>
       {props.children}
       <FieldSet name='colors.text' />
       <FieldSet name='colors.background' />
     </EditProvider>
-  </ThemeProvider>
+  </SeedProvider>
 ```
 
 ## `FieldSet`
 
 **Props**
 
-- `name` (string) dot-notation key path for `theme` object
+- `name` (string) dot-notation key path for `seed` object
 - `type` (string) type prop for child Field components (see below)
 - `ignore` (array) array of key names to omit from the form
 
@@ -77,7 +77,7 @@ export default props =>
 
 **Props**
 
-- `name` (string) dot-notation key path for `theme` object
+- `name` (string) dot-notation key path for `seed` object
 - `type` (string | 'number', 'select', or 'color') type of form field to render
 - `options` (array) array of options to render for `select` type fields
 - `render` (function) render prop for custom field UI

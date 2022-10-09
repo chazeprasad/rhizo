@@ -15,7 +15,7 @@ const backgroundColor = style({
   key: 'colors',
 })
 
-const theme = {
+const seed = {
   colors: {
     blue: '#07c',
     black: '#111',
@@ -34,8 +34,8 @@ test('function returns a style object', () => {
   })
 })
 
-test('returns values from theme', () => {
-  const style = color({ theme, color: 'blue' })
+test('returns values from seed', () => {
+  const style = color({ seed, color: 'blue' })
   expect(style).toEqual({
     color: '#07c',
   })
@@ -43,7 +43,7 @@ test('returns values from theme', () => {
 
 test('handles aliased props', () => {
   const style = backgroundColor({
-    theme,
+    seed,
     bg: 'blue',
   })
   expect(style).toEqual({

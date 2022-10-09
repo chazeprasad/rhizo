@@ -1,5 +1,5 @@
 {
-  "name": "@rhizo/theme-get",
+  "name": "@rhizo/seed-get",
   "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@rhizo/core": "^1.0.1"
   },
-  "gitHead": "a6feb6009c58f2eb68f0c3120c5672f6cb54294f",
+  "gitHead": "ab21a63e1496cdd4d34d71ba87bf0706d8a80d12",
   "publishConfig": {
     "access": "public"
   }

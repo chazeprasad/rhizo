@@ -1,13 +1,13 @@
 
 # @rhizo/css
 
-Styled System for the `css` prop
+Rhizo for the `css` prop
 
 ```sh
 npm i @rhizo/css
 ```
 
-Styled System CSS lets you write style objects with responsive, theme-aware Styled System shortcuts.
+Rhizo CSS lets you write style objects with responsive, seed-aware Rhizo shortcuts.
 
 ```jsx
 // usage with the css prop
@@ -43,11 +43,11 @@ const Boop = styled('div')(
 
 To make the css prop work with `styled-components`, `babel-plugin-styled-components` must be enabled.
 
-## Theme Keys
+## Seed Keys
 
-The following keys in your style object will work the same as Styled System props, pulling values from your `theme` object.
+The following keys in your style object will work the same as Rhizo props, pulling values from your `seed` object.
 
-Property  | Theme Key
+Property  | Seed Key
 ---|---
 `fontFamily` | `fonts`
 `fontSize` | `fontSizes`
@@ -106,12 +106,12 @@ All CSS properties accept arrays as values for responsive styles.
 />
 ```
 
-In this example, `fontSize` accepts an array, picking up values from the `theme.fontSizes` scale, and `borderBottom` is passed through as plain CSS.
+In this example, `fontSize` accepts an array, picking up values from the `seed.fontSizes` scale, and `borderBottom` is passed through as plain CSS.
 
 ```jsx
 <div
   css={css({
-    // Styled System key
+    // Rhizo key
     fontSize: [ 3, 4, 5 ],
     // CSS property
     borderBottom: '2px solid tomato',

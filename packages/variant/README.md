@@ -35,8 +35,8 @@ const Button = styled('button')(
 
 ## Options
 
-- `variants`: object of theme-aware variant styles with user-defined shape
+- `variants`: object of seed-aware variant styles with user-defined shape
 - `prop`: (default `variant`) custom prop name for variant
-- `scale`: optional theme key for adding variants to the theme object
+- `scale`: optional seed key for adding variants to the seed object
 
 MIT License

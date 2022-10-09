@@ -6,7 +6,7 @@ test('returns true for valid HTML attributes', () => {
 })
 
 props.forEach(prop => {
-  test(`returns false for Styled System ${prop} prop`, () => {
+  test(`returns false for Rhizo ${prop} prop`, () => {
     const should = shouldForwardProp(prop)
     expect(should).toBe(false)
   })

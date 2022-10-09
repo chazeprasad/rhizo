@@ -1,6 +1,6 @@
 import { system, compose } from '../src'
 
-const theme = {
+const seed = {
   colors: {
     primary: 'rebeccapurple',
     secondary: 'papayawhip',
@@ -18,7 +18,7 @@ const parser = system({
 
 test('uses default breakpoints', () => {
   const styles = parser({
-    theme: theme,
+    seed: seed,
     fontSize: [1, 2, 3],
     color: ['primary', null, 'secondary'],
   })
@@ -38,7 +38,7 @@ test('uses default breakpoints', () => {
 // Per default, we expect it to be impossible to override breakpoints
 test('does *not* use dynamically changed breakpoints', () => {
   const styles = parser({
-    theme: { ...theme, breakpoints: ['11em', '22em', '33em'] },
+    seed: { ...seed, breakpoints: ['11em', '22em', '33em'] },
     fontSize: [1, 2, 3],
     color: ['primary', null, 'secondary'],
   })
@@ -58,8 +58,8 @@ test('does *not* use dynamically changed breakpoints', () => {
 // With caching disabled, we expect it to be possible to change breakpoints
 test('uses dynamically changed breakpoints', () => {
   const firstStyles = parser({
-    theme: {
-      ...theme,
+    seed: {
+      ...seed,
       breakpoints: ['11em', '22em', '33em'],
       disableStyledSystemCache: true,
     },
@@ -79,8 +79,8 @@ test('uses dynamically changed breakpoints', () => {
   })
 
   const secondStyles = parser({
-    theme: {
-      ...theme,
+    seed: {
+      ...seed,
       breakpoints: ['9em', '8em', '7em'],
       disableStyledSystemCache: true,
     },
@@ -100,7 +100,7 @@ test('uses dynamically changed breakpoints', () => {
   })
 
   const thirdStyles = parser({
-    theme: theme,
+    seed: seed,
     fontSize: [1, 2, 3],
     color: ['primary', null, 'secondary'],
   })

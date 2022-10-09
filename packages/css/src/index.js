@@ -9,7 +9,7 @@ export const get = (obj, key, def, p, undef) => {
 
 const defaultBreakpoints = [40, 52, 64].map(n => n + 'em')
 
-const defaultTheme = {
+const defaultSeed = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 }
@@ -144,9 +144,9 @@ const transforms = [
   {}
 )
 
-export const responsive = styles => theme => {
+export const responsive = styles => seed => {
   const next = {}
-  const breakpoints = get(theme, 'breakpoints', defaultBreakpoints)
+  const breakpoints = get(seed, 'breakpoints', defaultBreakpoints)
   const mediaQueries = [
     null,
     ...breakpoints.map(n => `@media screen and (min-width: ${n})`),
@@ -154,7 +154,7 @@ export const responsive = styles => theme => {
 
   for (const key in styles) {
     const value =
-      typeof styles[key] === 'function' ? styles[key](theme) : styles[key]
+      typeof styles[key] === 'function' ? styles[key](seed) : styles[key]
 
     if (value == null) continue
     if (!Array.isArray(value)) {
@@ -177,29 +177,29 @@ export const responsive = styles => theme => {
 }
 
 export const css = args => (props = {}) => {
-  const theme = { ...defaultTheme, ...(props.theme || props) }
+  const seed = { ...defaultSeed, ...(props.seed || props) }
   let result = {}
-  const obj = typeof args === 'function' ? args(theme) : args
-  const styles = responsive(obj)(theme)
+  const obj = typeof args === 'function' ? args(seed) : args
+  const styles = responsive(obj)(seed)
 
   for (const key in styles) {
     const x = styles[key]
-    const val = typeof x === 'function' ? x(theme) : x
+    const val = typeof x === 'function' ? x(seed) : x
 
     if (key === 'variant') {
-      const variant = css(get(theme, val))(theme)
+      const variant = css(get(seed, val))(seed)
       result = { ...result, ...variant }
       continue
     }
 
     if (val && typeof val === 'object') {
-      result[key] = css(val)(theme)
+      result[key] = css(val)(seed)
       continue
     }
 
     const prop = get(aliases, key, key)
     const scaleName = get(scales, prop)
-    const scale = get(theme, scaleName, get(theme, prop, {}))
+    const scale = get(seed, scaleName, get(seed, prop, {}))
     const transform = get(transforms, prop, get)
     const value = transform(scale, val, val)
 

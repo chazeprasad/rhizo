@@ -7,7 +7,7 @@ test('returns border styles', () => {
 
 test('returns individual border styles', () => {
   const style = border({
-    theme: {
+    seed: {
       borderWidths: { thin: 1 },
       colors: { primary: 'red' },
       borderStyles: { thick: 'solid' },
@@ -52,7 +52,7 @@ test('returns individual border styles', () => {
 
 test('returns border top and bottom radii', () => {
   const style = border({
-    theme: {
+    seed: {
       radii: { small: 5 },
     },
     borderTopLeftRadius: 'small',

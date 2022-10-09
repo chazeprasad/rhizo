@@ -14,7 +14,7 @@ test('returns a style parser', () => {
   })
   expect(typeof parser).toBe('function')
   const styles = parser({
-    theme: {
+    seed: {
       space: [0, 4, 8, 16, 32],
       colors: {
         primary: 'rebeccapurple',
@@ -94,7 +94,7 @@ test('merges multiple responsive object styles', () => {
   })
 })
 
-test('gets values from theme', () => {
+test('gets values from seed', () => {
   const parser = system({
     mx: {
       properties: ['marginLeft', 'marginRight'],
@@ -106,7 +106,7 @@ test('gets values from theme', () => {
     },
   })
   const style = parser({
-    theme: {
+    seed: {
       colors: {
         primary: 'tomato',
       },
@@ -135,7 +135,7 @@ test('gets values from theme', () => {
   })
 })
 
-test('gets 0 index values from theme', () => {
+test('gets 0 index values from seed', () => {
   const parser = system({
     width: {
       property: 'width',
@@ -143,7 +143,7 @@ test('gets 0 index values from theme', () => {
     }
   })
   const style = parser({
-    theme: {
+    seed: {
       sizes: [ 24, 48 ],
     },
     width: 0,
@@ -218,7 +218,7 @@ test('supports non-array breakpoints object', () => {
     width: true,
   })
   const styles = parser({
-    theme: {
+    seed: {
       disableStyledSystemCache: true,
       breakpoints: {
         sm: '32em',
@@ -251,7 +251,7 @@ test('sorts media queries when responsive object values are used', () => {
     color: true,
   })
   const styles = parser({
-    theme: {
+    seed: {
       disableStyledSystemCache: true,
       breakpoints: {
         sm: '32em',

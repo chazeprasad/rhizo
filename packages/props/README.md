@@ -1,7 +1,7 @@
 
 # @rhizo/props
 
-Utilities for using Styled System props
+Utilities for using Rhizo props
 
 ```sh
 npm i @rhizo/props

@@ -1,5 +1,5 @@
 import { get } from '@rhizo/core'
 
-export const themeGet = (path, fallback = null) => props =>
-  get(props.theme, path, fallback)
-export default themeGet
+export const seedGet = (path, fallback = null) => props =>
+  get(props.seed, path, fallback)
+export default seedGet

@@ -59,7 +59,7 @@ test('null values return responsive styles in the correct order', () => {
 
 test('object values return responsive styles in the correct order', () => {
   const a = space({
-    theme: {
+    seed: {
       disableStyledSystemCache: true,
       breakpoints: {
         small: '40em',

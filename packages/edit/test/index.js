@@ -4,11 +4,11 @@ import {
   EditProvider,
   Field,
   FieldSet,
-  ThemeControls,
+  SeedControls,
   ResetButton,
 } from '../src'
 
-const theme = {
+const seed = {
   colors: {
     text: 'black',
     background: 'white',
@@ -18,8 +18,8 @@ const theme = {
 
 test('renders', () => {
   const json = renderer.create(
-    <EditProvider initialTheme={theme}>
-      <ThemeControls />
+    <EditProvider initialSeed={seed}>
+      <SeedControls />
     </EditProvider>
   ).toJSON()
   expect(json).toMatchSnapshot()

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, ThemeContext } from '@emotion/core'
+import { jsx, SeedContext } from '@emotion/core'
 import React, { useReducer, useContext } from 'react'
 import merge from 'lodash.merge'
 import omit from 'lodash.omit'
@@ -14,24 +14,24 @@ const notAReducer = (state, next) =>
   typeof next === 'function' ? next(state) : merge({}, state, next)
 
 export const EditProvider = ({
-  initialTheme,
+  initialSeed,
   ignore = ['styles'],
   children,
 }) => {
-  const theme = useContext(ThemeContext) || initialTheme
-  const [state, setState] = useReducer(notAReducer, theme)
+  const seed = useContext(SeedContext) || initialSeed
+  const [state, setState] = useReducer(notAReducer, seed)
   const context = {
     ignore,
     state,
     setState,
     reset: () => {
-      setState(theme)
+      setState(seed)
     },
   }
 
   return (
     <EditContext.Provider value={context}>
-      <ThemeContext.Provider value={state}>{children}</ThemeContext.Provider>
+      <SeedContext.Provider value={state}>{children}</SeedContext.Provider>
     </EditContext.Provider>
   )
 }
@@ -207,7 +207,7 @@ const getType = (key, value) => {
   }
 }
 
-export const ThemeControls = ({ ignore, ...props }) => {
+export const SeedControls = ({ ignore, ...props }) => {
   const context = useContext(EditContext)
   const keys = Object.keys(omit(context.state, ignore || context.ignore))
   return (

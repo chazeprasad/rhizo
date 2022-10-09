@@ -12,21 +12,21 @@ import {
   compose,
 } from '../src'
 
-const theme = {
+const seed = {
   colors: {
     blue: '#07c',
     black: '#111',
   },
 }
 
-test('returns color values from theme', () => {
-  const a = color({ theme, color: 'blue', bg: 'black' })
+test('returns color values from seed', () => {
+  const a = color({ seed, color: 'blue', bg: 'black' })
   expect(a).toEqual({ color: '#07c', backgroundColor: '#111' })
 })
 
 test('returns raw color values', () => {
   const a = color({
-    theme,
+    seed,
     color: 'inherit',
     bg: 'tomato',
   })
@@ -71,9 +71,9 @@ test('returns a string width', () => {
   expect(a).toEqual({ width: 'auto' })
 })
 
-test('returns a width based on theme.sizes', () => {
+test('returns a width based on seed.sizes', () => {
   const a = width({
-    theme: {
+    seed: {
       sizes: [24, 48],
     },
     width: 1,
@@ -106,7 +106,7 @@ test('size returns width and height', () => {
 // grid
 test('gridGap returns a scalar style', () => {
   const a = gridGap({
-    theme: {
+    seed: {
       space: [0, 2, 4, 8],
     },
     gridGap: 3,
@@ -116,7 +116,7 @@ test('gridGap returns a scalar style', () => {
 
 test('gridGap uses the default scale', () => {
   const a = gridGap({
-    theme: {},
+    seed: {},
     gridGap: 2,
   })
   expect(a).toEqual({ gridGap: 8 })
@@ -124,7 +124,7 @@ test('gridGap uses the default scale', () => {
 
 test('gridRowGap returns a scalar style', () => {
   const a = gridRowGap({
-    theme: {
+    seed: {
       space: [0, 2, 4, 8],
     },
     gridRowGap: 3,
@@ -134,7 +134,7 @@ test('gridRowGap returns a scalar style', () => {
 
 test('gridRowGap uses the default scale', () => {
   const a = gridRowGap({
-    theme: {},
+    seed: {},
     gridRowGap: 2,
   })
   expect(a).toEqual({ gridRowGap: 8 })
@@ -142,7 +142,7 @@ test('gridRowGap uses the default scale', () => {
 
 test('gridColumnGap returns a scalar style', () => {
   const a = gridColumnGap({
-    theme: {
+    seed: {
       space: [0, 2, 4, 8],
     },
     gridColumnGap: 3,
@@ -152,7 +152,7 @@ test('gridColumnGap returns a scalar style', () => {
 
 test('gridColumnGap uses the default scale', () => {
   const a = gridColumnGap({
-    theme: {},
+    seed: {},
     gridColumnGap: 2,
   })
   expect(a).toEqual({ gridColumnGap: 8 })

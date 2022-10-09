@@ -36,7 +36,7 @@ describe('emotion', () => {
 
   test('object breakpoints work with defaultProps', () => {
     const Box = styled('div')(space)
-    const theme = {
+    const seed = {
       disableStyledSystemCache: true,
       breakpoints: {
         small: '32em',
@@ -44,7 +44,7 @@ describe('emotion', () => {
       }
     }
     Box.defaultProps = {
-      theme,
+      seed,
       p: {
         _: 0,
         medium: 4,

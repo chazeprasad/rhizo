@@ -1,7 +1,7 @@
 
 # @rhizo/prop-types
 
-Add prop types to components built with Styled System
+Add prop types to components built with Rhizo
 
 ```sh
 npm i rhizo @rhizo/prop-types

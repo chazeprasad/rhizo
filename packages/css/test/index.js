@@ -1,6 +1,6 @@
 import css from '../src'
 
-const theme = {
+const seed = {
   colors: {
     primary: 'tomato',
     secondary: 'cyan',
@@ -79,7 +79,7 @@ test('returns system props styles', () => {
   const result = css({
     color: 'primary',
     fontSize: [2, 3, 4],
-  })({ theme })
+  })({ seed })
   expect(result).toEqual({
     fontSize: 16,
     '@media screen and (min-width: 40em)': {
@@ -98,7 +98,7 @@ test('returns nested system props styles', () => {
     '&:hover': {
       color: 'secondary',
     },
-  })({ theme })
+  })({ seed })
   expect(result).toEqual({
     color: 'tomato',
     '&:hover': {
@@ -113,7 +113,7 @@ test('returns nested responsive styles', () => {
     h1: {
       py: [3, 4],
     },
-  })({ theme })
+  })({ seed })
   expect(result).toEqual({
     color: 'tomato',
     h1: {
@@ -127,7 +127,7 @@ test('returns nested responsive styles', () => {
   })
 })
 
-test('handles all core styled system props', () => {
+test('handles all core Rhizo props', () => {
   const result = css({
     m: 0,
     mb: 2,
@@ -140,7 +140,7 @@ test('handles all core styled system props', () => {
     bg: 'secondary',
     fontFamily: 'monospace',
     lineHeight: 'body',
-  })({ theme })
+  })({ seed })
   expect(result).toEqual({
     margin: 0,
     marginBottom: 8,
@@ -163,7 +163,7 @@ test('works with the css prop', () => {
     color: 'primary',
     m: 0,
     fontSize: 2,
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     color: 'tomato',
     margin: 0,
@@ -174,7 +174,7 @@ test('works with the css prop', () => {
 test('works with functional arguments', () => {
   const result = css(t => ({
     color: t.colors.primary,
-  }))(theme)
+  }))(seed)
   expect(result).toEqual({
     color: 'tomato',
   })
@@ -183,16 +183,16 @@ test('works with functional arguments', () => {
 test('supports functional values', () => {
   const result = css({
     color: t => t.colors.primary,
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     color: 'tomato',
   })
 })
 
-test('returns variants from theme', () => {
+test('returns variants from seed', () => {
   const result = css({
     variant: 'buttons.primary',
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     padding: 16,
     fontWeight: 600,
@@ -205,7 +205,7 @@ test('returns variants from theme', () => {
 test('handles variants with responsive values', () => {
   const result = css({
     variant: 'text.caps',
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     fontSize: 14,
     letterSpacing: '0.1em',
@@ -219,7 +219,7 @@ test('handles variants with responsive values', () => {
 test('handles responsive variants', () => {
   const result = css({
     variant: 'text.title',
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     fontSize: 24,
     letterSpacing: '-0.01em',
@@ -234,7 +234,7 @@ test('handles negative margins from scale', () => {
   const result = css({
     mt: -3,
     mx: -4,
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     marginTop: -16,
     marginLeft: -32,
@@ -248,7 +248,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
     right: -4,
     bottom: -3,
     left: -2,
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     top: -4,
     right: -32,
@@ -260,7 +260,7 @@ test('handles negative top, left, bottom, and right from scale', () => {
 test('skip breakpoints', () => {
   const result = css({
     width: [ '100%', , '50%' ],
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     width: '100%',
     '@media screen and (min-width: 40em)': {},
@@ -278,7 +278,7 @@ test('padding shorthand does not collide with nested p selector', () => {
       p: 2,
     },
     padding: 32,
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     p: {
       fontSize: 32,
@@ -309,7 +309,7 @@ test('ignores array values longer than breakpoints', () => {
 test('functional values can return responsive arrays', () => {
   const result = css({
     color: t => [t.colors.primary, t.colors.secondary],
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     '@media screen and (min-width: 40em)': {
       color: 'cyan',
@@ -336,7 +336,7 @@ test('returns individual border styles', () => {
     borderLeftWidth: 'thin',
     borderLeftColor: 'primary',
     borderLeftStyle: 'thick',
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     borderTopColor: 'tomato',
     borderTopWidth: 1,
@@ -357,20 +357,20 @@ test('returns individual border styles', () => {
   })
 })
 
-test('flexBasis uses theme.sizes', () => {
+test('flexBasis uses seed.sizes', () => {
   const style = css({
     flexBasis: 'sidebar',
-  })(theme)
+  })(seed)
   expect(style).toEqual({
     flexBasis: 320,
   })
 })
 
-test('fill and stroke use theme.colors', () => {
+test('fill and stroke use seed.colors', () => {
   const style = css({
     fill: 'primary',
     stroke: 'secondary',
-  })(theme)
+  })(seed)
   expect(style).toEqual({
     fill: 'tomato',
     stroke: 'cyan',
@@ -384,7 +384,7 @@ test('multiples are transformed', () => {
     paddingX: 2,
     paddingY: 2,
     size: 'large',
-  })(theme)
+  })(seed)
   expect(style).toEqual({
     marginLeft: 8,
     marginRight: 8,
@@ -399,10 +399,10 @@ test('multiples are transformed', () => {
   })
 })
 
-test('returns outline color from theme', () => {
+test('returns outline color from seed', () => {
   const result = css({
     outlineColor: 'primary',
-  })(theme)
+  })(seed)
   expect(result).toEqual({
     outlineColor: 'tomato'
   })
@@ -412,7 +412,7 @@ test('returns correct media query order', () => {
   const result = css({
     width: ['100%', , '50%'],
     color: ['red', 'green', 'blue'],
-  })(theme)
+  })(seed)
   const keys = Object.keys(result)
   expect(keys).toEqual([
     'width',
@@ -441,7 +441,7 @@ test('returns correct media query order 2', () => {
     height: '100%',
     px: [2, 3, 4],
     py: 4,
-  })(theme)
+  })(seed)
   const keys = Object.keys(result)
   expect(keys).toEqual([
     'flexDirection',
