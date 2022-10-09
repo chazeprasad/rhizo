@@ -1,1 +1,1 @@
-packages/styled-system/README.md
+## Rhizo Design System
