@@ -27,7 +27,7 @@
     "@rhizo/typography": "^1.0.10",
     "@rhizo/variant": "^1.0.10"
   },
-  "gitHead": "0a22c98bda76bc0d63b9621e8d61e55b1d96c016",
+  "gitHead": "3a1e735570e91e63d2588e6854dd00617df186b1",
   "devDependencies": {
     "@emotion/styled": "^10.0.14",
     "jest-styled-components": "^7.0.0",

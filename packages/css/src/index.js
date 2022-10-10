@@ -1,3 +1,5 @@
+import { useSeed } from "@rhizo/seed"
+
 // based on https://github.com/developit/dlv
 export const get = (obj, key, def, p, undef) => {
   key = key && key.split ? key.split('.') : [key]
@@ -177,6 +179,9 @@ export const responsive = styles => seed => {
 }
 
 export const css = args => (props = {}) => {
+  const s = useSeed()
+  console.log('-------------- System Theme --------------')
+  console.log(s);
   const seed = { ...defaultSeed, ...(props.seed || props) }
   let result = {}
   const obj = typeof args === 'function' ? args(seed) : args
