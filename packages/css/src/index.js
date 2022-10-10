@@ -179,9 +179,7 @@ export const responsive = styles => seed => {
 }
 
 export const css = args => (props = {}) => {
-  const s = useSeed()
-  console.log('-------------- System Theme --------------')
-  console.log(s);
+
   const seed = { ...defaultSeed, ...(props.seed || props) }
   let result = {}
   const obj = typeof args === 'function' ? args(seed) : args
