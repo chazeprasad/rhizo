@@ -1,6 +1,6 @@
 {
   "name": "@rhizo/should-forward-prop",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Utility for filtering Rhizo props with Emotion's shouldForwardProp option",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.1",
     "@emotion/memoize": "^0.7.1",
-    "@rhizo/system": "^1.0.11"
+    "@rhizo/system": "^1.0.12"
   },
   "gitHead": "848a54b096953a075771e2e6a8948ab472c96046"
 }

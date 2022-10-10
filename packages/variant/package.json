@@ -1,13 +1,13 @@
 {
   "name": "@rhizo/variant",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "author": "Prasad Sivanandan <chazeprasad@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@rhizo/core": "^1.0.11",
-    "@rhizo/css": "^1.0.11"
+    "@rhizo/core": "^1.0.12",
+    "@rhizo/css": "^1.0.12"
   },
   "gitHead": "848a54b096953a075771e2e6a8948ab472c96046",
   "publishConfig": {
